@@ -1,0 +1,26 @@
+[project]
+name = "calculadora-lgr"
+version = "0.1.0"
+description = "Calculadora do Lugar Geométrico das Raízes (LGR) — 12 passos - DCA-3701 UFRN"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "streamlit>=1.63",
+    "numpy>=2.0",
+    "sympy>=1.14",
+    "scipy>=1.13",
+    "plotly>=7.0",
+    "control>=0.10",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=8.0",
+]
+
+[tool.uv]
+package = false
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
