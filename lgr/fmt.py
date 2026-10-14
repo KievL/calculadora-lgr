@@ -1,6 +1,8 @@
 """Formatação numérica no padrão da apostila (vírgula decimal, 4 casas)."""
 from __future__ import annotations
 
+import re
+
 import numpy as np
 
 TOL = 1e-6
@@ -93,3 +95,8 @@ def poly_str(coeffs, var: str = "s") -> str:
         else:
             out += f" {sinal} {termo}"
     return out
+
+
+def tex(latex: str) -> str:
+    """Protege a vírgula decimal para não ganhar espaço de pontuação no LaTeX."""
+    return re.sub(r"(?<=\d),(?=\d)", "{,}", latex)
